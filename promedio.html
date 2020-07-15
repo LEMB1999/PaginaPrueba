@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>CALCULO DE PROMEDIO</title>
+  <style>
+    body{
+      height:100px;
+    }
+    div {
+      font-size:20px;
+      position: relative;
+      border: 1px solid;
+      width: 550px;
+      padding: 15px;
+      border-radius: 20px;
+      background-color:#FA8072;
+      top:50%;
+      left:50%;
+      transform: translateX(-50%);
+     }
+    input {
+      position: absolute;
+      right: 10px;
+      padding:5px;
+      margin-bottom:5px;
+    }
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <label for="c1">LENGUAJE Y AUTOMATAS I:</label>
+    <input type="text" id="c1"  class="input" required>
+    <br>
+    <label for="c2">INGENERIA DE SOFTWARE:</label>
+    <input type="text" id="c2" class="input" required>
+    <br>
+    <label for="c3">CULTURA EMPRESARIAL:</label>
+    <input type="text" id="c3" class="input" required>
+    <br>
+    <label for="c4">TALLER DE SISTEMAS OPERATIVOS:</label>
+    <input type="text" id="c4" class="input" required >
+    <br>
+    <label for="c5">REDES DE COMPUTADORAS:</label>
+    <input type="text" id="c5" class="input" required>
+    <br>
+    <label for="c6">LENGUAJE DE INTERFAZ:</label>
+    <input type="text" id="c6" class="input" required>
+    <br>
+    <label for="c7">TALLER DE INVESTIGACION II:</label>
+    <input type="text" id="c7" class="input" required>
+    <br>
+    <input type="submit" value="CALCULAR" onclick="Promedio()">
+    <label id="resultado" for="">Promedio: 00.00</label>
+  </div>
+</body>
+<script type="text/javascript">
+    function Promedio() {
+      let calificaciones = document.getElementsByClassName("input");
+      let suma=0;
+      let size=calificaciones.length;
+      let x=0;
+      for(x;x<size;x++){
+          suma+=parseInt(calificaciones[x].value,10);
+      }
+        document.getElementById("resultado").innerText="Promedio:"+(suma/size).toString();
+    }
+</script>
+
+</html>
